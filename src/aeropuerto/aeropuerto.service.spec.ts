@@ -87,6 +87,7 @@ describe('AeropuertoService', () => {
   it('update should modify a aeropuerto', async () => {
     const aeropuerto: AeropuertoEntity = aeropuertoList[0];
     aeropuerto.nombre = 'New name';
+    aeropuerto.codigo = '123';
     const updatedAeropuerto: AeropuertoEntity = await service.update(
       aeropuerto.id,
       aeropuerto,

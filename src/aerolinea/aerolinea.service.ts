@@ -16,7 +16,7 @@ export class AerolineaService {
 
   async create(aerolinea: AerolineaEntity): Promise<AerolineaEntity> {
     const fechaActual = new Date();
-    if (aerolinea.fechaFundacion >= fechaActual) {
+    if (new Date(aerolinea.fechaFundacion) > fechaActual) {
       throw new BusinessLogicException(
         'La fecha de fundacion debe ser menor a la fecha actual',
         BusinessError.PRECONDITION_FAILED,

@@ -37,7 +37,7 @@ export class AeropuertoService {
   async create(aeropuerto: AeropuertoEntity): Promise<AeropuertoEntity> {
     if (aeropuerto.codigo.length < 3) {
       throw new BusinessLogicException(
-        'El codigo del aeropuerto debe ser mayor a 3 digitos',
+        'El codigo del aeropuerto debe igual a 3 digitos',
         BusinessError.PRECONDITION_FAILED,
       );
     }
@@ -52,9 +52,9 @@ export class AeropuertoService {
         'El aeropuerto con el id dado no existe',
         BusinessError.NOT_FOUND,
       );
-    if (aeropuerto.codigo.length < 3) {
+    if (aeropuerto.codigo.length < 3 || aeropuerto.codigo.length > 3) {
       throw new BusinessLogicException(
-        'El codigo del aeropuerto debe ser mayor a 3 digitos',
+        'El codigo del aeropuerto debe igual a 3 digitos',
         BusinessError.PRECONDITION_FAILED,
       );
     }

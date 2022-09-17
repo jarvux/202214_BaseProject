@@ -62,7 +62,7 @@ export class AeropuertoAerolineaService {
     const aerolinea = await this.getAerolineaByAerolineaId(aerolineaId);
 
     for (let i = 0; i < aeropuertos.length; i++) {
-      await this.getAerolineaByAerolineaId(aeropuertos[i].id);
+      await this.getAeropuertoByAeropuertoId(aeropuertos[i].id);
     }
 
     aerolinea.aeropuertos = aeropuertos;

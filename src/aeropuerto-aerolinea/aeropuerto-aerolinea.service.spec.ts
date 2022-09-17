@@ -167,7 +167,7 @@ describe('AerolineaAeropuertoService', () => {
       'La aerolinea con el id dado no fue encontrada',
     );
   });
-  /*
+
   it('updateAirportsFromAirline should update aeropuertos list for a aerolinea', async () => {
     const newAeropuerto: AeropuertoEntity = await getNewAeropuerto();
 
@@ -176,7 +176,7 @@ describe('AerolineaAeropuertoService', () => {
     expect(updatedAerolinea.aeropuertos.length).toBe(1);
     expect(updatedAerolinea.aeropuertos[0].nombre).toBe(newAeropuerto.nombre);
   });
-*/
+
   it('updateAirportsFromAirline should throw an exception for an invalid aerolinea', async () => {
     const newAeropuerto: AeropuertoEntity = await getNewAeropuerto();
 
@@ -196,7 +196,7 @@ describe('AerolineaAeropuertoService', () => {
       service.updateAirportsFromAirline(aerolinea.id, [newAeropuerto]),
     ).rejects.toHaveProperty(
       'message',
-      'La aerolinea con el id dado no fue encontrada',
+      'El aeropuerto con el id dado no fue encontrado',
     );
   });
 
